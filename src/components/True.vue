@@ -27,10 +27,7 @@
           <div class="title2" style="margin-top:23rem;"> 
               <div class="span"></div>
               <p>今日人流量高峰时段分布</p>
-            </div> 
-         <div class="box" id="myChart">
-          
-         </div>
+            </div>
     </div>
 </template>
 
@@ -94,8 +91,8 @@ export default {
       // 绘制图表
       myChart.setOption({
         grid:{
-            containerLabel:true,
-            borderWidth:0
+          containerLabel:true,
+          borderWidth:0
         },
         xAxis: {
           type: "category",
@@ -105,22 +102,24 @@ export default {
             "09：30",
             "10：30",
             "11：30",
-            "14：30", 
+            "14：30",
             "15：30",
             "17：30"
           ]
         },
+
         yAxis: {
           type: "value",
-                axisLine: {show: false},
-                    // 去除y轴上的刻度线
-                    axisTick: {
-                            show: false
-                    },                    
-                    // 控制网格线是否显示
-                    splitLine: {
-                            show: false                         
-                    }
+          axisLine: {show: false},
+          // 去除y轴上的刻度线
+          axisTick: {
+            show: false
+          },
+          // 控制网格线是否显示
+          splitLine: {
+            show: false
+          }
+
         },
         series: [
           {
@@ -248,12 +247,12 @@ export default {
   color: rgb(237, 241, 241);
   font-family: "Courier New", Courier, monospace;
 }
-.box {
-  width: 100%;
-  height: 270px;
-  margin-top: 24rem;
-  border: 1px solid yellow;
-  position: relative;
-  border: none;
-}
+/*.box {*/
+/*  width: 100%;*/
+/*  height: 270px;*/
+/*  margin-top: 24rem;*/
+/*  border: 1px solid yellow;*/
+/*  position: relative;*/
+/*  border: none;*/
+/*}*/
 </style>

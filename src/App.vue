@@ -15,6 +15,7 @@ body{
   margin: 0;
   padding: 0;
 }
+
 #app {
   font-family:PingFangSC-Regular;
   -webkit-font-smoothing: antialiased;

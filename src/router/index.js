@@ -56,12 +56,12 @@ export default new Router({
       component: Index
     },
     {
-      path: '/True',
+      path: '/',
       name: 'True',
       component: True
     },
     {
-    path: '/',
+    path: '/Paidui',
     name: 'Paidui',
     component: Paidui
   }
