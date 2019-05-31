@@ -15,9 +15,7 @@
          <div class="first">
            <div class="span"></div>
            <p>取号量</p>
-           <div id="myChart">
-
-           </div>
+           <div id="myChartone"></div>
          </div>
     </div>
 </template>
@@ -48,9 +46,9 @@ export default {
   methods: {
     drawLine() {
       // 基于准备好的dom，初始化echarts实例
-      let myChart = this.$echarts.init(document.getElementById("myChart"));
+      let myChartone = this.$echarts.init(document.getElementById("myChartone"));
       // 绘制图表
-      myChart.setOption({
+      myChartone.setOption({
         grid:{
           containerLabel:true,
           borderWidth:0
@@ -180,7 +178,7 @@ export default {
   font-size: 0.8rem;
   font-family: "Times New Roman", Times, serif;
 }
-#myChart{
+#myChartone{
   width: 420px;
   height: 300px;
   margin-top: -5rem;

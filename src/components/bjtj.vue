@@ -1,47 +1,77 @@
 <template>
   <div class="container">
-      <!-- 四个方块 -->
-        <div class="he">
-              <div class="fk" > 
-                   <div class="line" style=" background-color: rgb(6, 207, 243);"></div>
-          
-                   <p style=" color:rgb(6, 207, 243);">取号量</p>
-                   <p style="font-size:2rem;margin-top:0rem;color: rgb(6, 207, 243);">1023</p>
-                   
-              </div>
-                 
-              <div class="fk"> 
-                   <div class="line" style=" background-color: hsl(281, 63%, 44%);"></div>
-                          <div class="btn"><p >查看详情</p></div>
-                   <p style=" color:hsl(281, 63%, 44%);">办件量</p>
-                   <p style="font-size:2rem;margin-top:0rem;color: hsl(281, 63%, 44%);">1023</p>
-              </div>
-    
-              <div class="fk" style="margin-top:1rem;"> 
-                   <div class="line" style=" background-color: rgb(224, 30, 127);"></div>
-                    <div class="btn"><p>查看详情</p></div>
-                   <p style=" color:rgb(224, 30, 127);">受理量</p>
-                   <p style="font-size:2rem;margin-top:0rem;color: rgb(224, 30, 127);">1023</p>
-              </div>
-                 
-              <div class="fk" style="margin-top:1rem;"> 
-                   <div class="line" style=" background-color: rgb(230, 209, 24);"></div>
-                    <div class="btn"><p>查看详情</p></div>
-                   <p style=" color:rgb(230, 209, 24);">办结量</p>
-                   <p style="font-size:2rem;margin-top:0rem;color: rgb(230, 209, 24);">1023</p>
-              </div>
+    <div class="head">
+      <img src="../assets/err.svg">
+      <p>办件统计</p>
+    </div>
+    <div class="content">
+      <div class="contentOne">
+        <div>
+          <p>取号量</p>
+          <div class="bottom">
+            <p style="margin-left: 0.7rem">1023</p>
+          </div>
         </div>
-
-<div class="day"> 
-         <span></span>
-           <span>个人和法人办理量比例情况</span>
-             </div>
-                <div class="aa">
-                   <span class="num">36%</span>
-                   <span class="numT" style="color:rgb(224, 30, 127);">22%</span>
-                   <div id="myChart" :style="mapStyle"></div> 
-                  <div id="myChartTwo" :style="mapStyleTwo"></div> 
-                  </div>
+        <div>
+          <p>收件量</p>
+          <div class="bottom">
+            <p style="color: #d941e9">256</p> <p>查看详情></p>
+          </div>
+        </div>
+        <div>
+          <p>受理量</p>
+          <div class="bottom">
+            <p style="color: #f1c101">360</p> <p>查看详情></p>
+          </div>
+        </div>
+        <div>
+          <p>办结量</p>
+          <div class="bottom">
+            <p style="color: #9349f9">406</p> <p>查看详情></p>
+          </div>
+        </div>
+      </div>
+    </div>
+<!--        <div class="he">-->
+<!--              <div class="fk" > -->
+<!--                   <div class="line" style=" background-color: rgb(6, 207, 243);"></div>-->
+<!--          -->
+<!--                   <p style=" color:rgb(6, 207, 243);">取号量</p>-->
+<!--                   <p style="font-size:2rem;margin-top:0rem;color: rgb(6, 207, 243);">1023</p>-->
+<!--                   -->
+<!--              </div>-->
+<!--                 -->
+<!--              <div class="fk"> -->
+<!--                   <div class="line" style=" background-color: hsl(281, 63%, 44%);"></div>-->
+<!--                          <div class="btn"><p >查看详情</p></div>-->
+<!--                   <p style=" color:hsl(281, 63%, 44%);">办件量</p>-->
+<!--                   <p style="font-size:2rem;margin-top:0rem;color: hsl(281, 63%, 44%);">1023</p>-->
+<!--              </div>-->
+<!--    -->
+<!--              <div class="fk" style="margin-top:1rem;"> -->
+<!--                   <div class="line" style=" background-color: rgb(224, 30, 127);"></div>-->
+<!--                    <div class="btn"><p>查看详情</p></div>-->
+<!--                   <p style=" color:rgb(224, 30, 127);">受理量</p>-->
+<!--                   <p style="font-size:2rem;margin-top:0rem;color: rgb(224, 30, 127);">1023</p>-->
+<!--              </div>-->
+<!--                 -->
+<!--              <div class="fk" style="margin-top:1rem;"> -->
+<!--                   <div class="line" style=" background-color: rgb(230, 209, 24);"></div>-->
+<!--                    <div class="btn"><p>查看详情</p></div>-->
+<!--                   <p style=" color:rgb(230, 209, 24);">办结量</p>-->
+<!--                   <p style="font-size:2rem;margin-top:0rem;color: rgb(230, 209, 24);">1023</p>-->
+<!--              </div>-->
+<!--        </div>-->
+<!--<div class="day"> -->
+<!--         <span></span>-->
+<!--           <span>个人和法人办理量比例情况</span>-->
+<!--             </div>-->
+<!--                <div class="aa">-->
+<!--                   <span class="num">36%</span>-->
+<!--                   <span class="numT" style="color:rgb(224, 30, 127);">22%</span>-->
+<!--                   <div id="myChart" :style="mapStyle"></div> -->
+<!--                  <div id="myChartTwo" :style="mapStyleTwo"></div> -->
+<!--                  </div>-->
             
 </div>
 </template>
@@ -183,12 +213,84 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to liminpmt CSS to this component only -->
-<style scoped>
-.container{
-    width:100%;
-   height: 700px;
-    background-color: #070a1f;
-}
+<style lang="scss" scoped>
+  .container {
+    width: 100%;
+
+    .head {
+      width: 100%;
+      height: 45px;
+      background-color: #f8f8f8;
+
+      img {
+        width: 0.6rem;
+        margin-left: -8.8rem;
+        margin-top: 0.25rem;
+      }
+
+      p {
+        margin-top: -0.65rem;
+        margin-left: -6rem;
+        font-size: 0.4rem;
+      }
+    }
+  .content{
+    position: relative;
+    width: 100%;
+    background-color: #e9e9e9;
+    .contentOne{
+      width: 98%;
+      height: 300px;
+      background-color: #ffffff;
+      margin-left: 1%;
+      border-radius: 0.2rem;
+      position: absolute;
+      margin-top: 0.2rem;
+      div {
+        padding-top: 0.5rem;
+        float: left;
+        width: 50%;
+        position: relative;
+        overflow: hidden;
+          p{
+          color: rgb(0, 0, 0);
+          font-family: "STHeiti STXihei";
+          font-size: 0.4rem;
+          margin-left: -1.3rem;
+        }
+        .bottom{
+          margin-top: -1.5rem;
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          P{
+            width: 50%;
+
+          }
+          p:nth-of-type(1){
+            color: #329aff;
+            font-size: 0.8rem;
+            font-weight: bolder;
+            margin-left: 1rem;
+          }
+          p:nth-of-type(2){
+            color: #64b3e7;
+            font-size: 0.35rem;
+            margin-top: 1.35rem;
+            margin-left: 0.3rem;
+          }
+        }
+      }
+      div:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-left: .02rem solid #ddd;
+      }
+    }
+  }
+  }
 .he{
     width:100%;
     display: flex;
@@ -280,12 +382,6 @@ export default {
     position: absolute;
     margin-top: 5.7rem;
     margin-left: 4.5rem;
-}
- @media only screen and (max-width: 412px){
- }
- @media only screen and (max-width: 384px){
-.container{
-    height:650px;
-}
+
  }
 </style>

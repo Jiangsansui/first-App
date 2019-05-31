@@ -39,7 +39,8 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+        include: [resolve('src'), resolve('test'),
+        resolve('node_modules/webpack-dev-server/client')]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -64,6 +65,10 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      { //从这一段上面是默认的！不用改！下面是没有的需要你手动添加，相当于是编译识别sass!
+        test: /\.scss$/,
+        loaders: ["style", "css", "sass"]
       }
     ]
   },

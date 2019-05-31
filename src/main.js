@@ -6,6 +6,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 import App from './App'
 import router from './router'
 import echarts from 'echarts'
+import'lib-flexible'
 
 Vue.use(ElementUI);
 Vue.prototype.$echarts = echarts

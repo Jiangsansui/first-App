@@ -1,30 +1,68 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Home from '@/components/Home'
+import bjtj from '@/components/bjtj'
+import bjdt from '@/components/bjdt'
+import fbtj from '@/components/fbtj'
+import rltj from '@/components/rltj'
+import ssdars from '@/components/ssdars'
+import cqjy from '@/components/cqjy'
 import Index from '@/components/Index'
-import Handle from '@/components/Handle'
-import Hello from '@/components/HelloWorld'
 import Appraise from '@/components/Appraise'
 import Window from '@/components/Window'
-import Info from '@/components/Info'
-import Deal from '@/components/Deal'
+// import Info from '@/components/Info'
+
 import Details from '@/components/Details'
 import True from '@/components/True'
 import Paidui from '@/components/Paidui'
+import lctj from '@/components/lctj'
+
 Vue.use(Router)
 
 export default new Router({
-  routes: [ 
+  routes: [
     {
-      path: '/handle',
-      name: 'Handle',
-      component: Handle
+      path: '/Home',
+      name: 'Home',
+      component: Home
     },
     {
-      path: '/Hello',
-      name: 'Hello',
-      component: Hello
+      path: '/bjtj',
+      name: 'bjtj',
+      component: bjtj
     },
-    
+    {
+      path: '/bjdt',
+      name: 'bjdt',
+      component: bjdt
+    },
+    {
+      path: '/fbtj',
+      name: 'fbtj',
+      component: fbtj
+    },
+    {
+      path: '/ssdars',
+      name: 'ssdars',
+      component: ssdars
+    },
+    {
+      path: '/',
+      name: 'lctj',
+      component: lctj
+    },
+    {
+      path: '/cqjy',
+      name: 'cqjy',
+      component: cqjy
+    },
+
+    {
+      path: '/rltj',
+      name: 'rltj',
+      component: rltj
+    },
+
     {
       path: '/appraise',
       name: 'Appraise',
@@ -35,16 +73,12 @@ export default new Router({
       name: 'Window',
       component: Window
     },
-    {
-      path: '/info',
-      name: 'Info',
-      component: Info
-    },
-    {
-      path: '/deal',
-      name: 'Deal',
-      component: Deal
-    },
+    // {
+    //   path: '/info',
+    //   name: 'Info',
+    //   component: Info
+    // },
+
     {
       path: '/details',
       name: 'Details',
@@ -61,7 +95,7 @@ export default new Router({
       component: True
     },
     {
-    path: '/',
+    path: '/Paidui',
     name: 'Paidui',
     component: Paidui
   }
