@@ -3,7 +3,7 @@
              <div class="content">
                <div class="head">
                    <img src="../assets/down.png">
-                   <span class="text">实时人流量</span>
+                   <span class="text">实时等待人数</span>
                  </div>
                <div id="myChart"
                     :style="{width: '300px',

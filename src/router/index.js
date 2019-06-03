@@ -11,7 +11,6 @@ import Index from '@/components/Index'
 import Appraise from '@/components/Appraise'
 import Window from '@/components/Window'
 // import Info from '@/components/Info'
-
 import Details from '@/components/Details'
 import True from '@/components/True'
 import Paidui from '@/components/Paidui'
@@ -22,7 +21,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/Home',
+      path: '/',
       name: 'Home',
       component: Home
     },
@@ -47,7 +46,7 @@ export default new Router({
       component: ssdars
     },
     {
-      path: '/',
+      path: '/lctj',
       name: 'lctj',
       component: lctj
     },

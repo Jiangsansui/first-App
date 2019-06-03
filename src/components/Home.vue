@@ -5,7 +5,7 @@
       <img src="../assets/bgt.png">
       <div class="box">
         <div>
-        <img src="../assets/rltj.png">
+        <img src="../assets/rltj.png" @click="goto(rltj())">
         <p>人流统计</p>
       </div>
         <div>
@@ -29,7 +29,7 @@
           <p>评价统计</p>
         </div>
         <div>
-          <img src="../assets/lctj.png">
+          <img src="../assets/lctj.png" @click="goto(lctj())">
           <p>楼层统计</p>
         </div>
         <div>
@@ -55,11 +55,17 @@
       return {}
     },
     methods: {
+      rltj() {
+        this.$router.push({path: "/rltj"});
+      },
       bjdt() {
         this.$router.push({path: "/bjdt"});
       },
       fbtj(){
         this.$router.push({path: "/fbtj"});
+      },
+      lctj(){
+        this.$router.push({path: "/lctj"});
       }
 
     }

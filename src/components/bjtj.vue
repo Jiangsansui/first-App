@@ -72,7 +72,7 @@
 <!--                   <div id="myChart" :style="mapStyle"></div> -->
 <!--                  <div id="myChartTwo" :style="mapStyleTwo"></div> -->
 <!--                  </div>-->
-            
+
 </div>
 </template>
 <script>
