@@ -9,7 +9,7 @@
         <p>人流统计</p>
       </div>
         <div>
-          <img src="../assets/bjtj.png">
+          <img src="../assets/bjtj.png" @click="goto(bjtj())">
           <p>办件统计</p>
         </div>
         <div>
@@ -17,15 +17,15 @@
           <p>办件动态</p>
         </div>
         <div>
-          <img src="../assets/pdqk.png">
+          <img src="../assets/pdqk.png" @click="goto(pdqk())">
           <p>排队情况</p>
         </div>
         <div>
-          <img src="../assets/zhpm.png">
+          <img src="../assets/zhpm.png" @click="goto(zhpm())">
           <p>综合排名</p>
         </div>
         <div>
-          <img src="../assets/pjtj.png">
+          <img src="../assets/pjtj.png" @click="goto(pjtj())">
           <p>评价统计</p>
         </div>
         <div>
@@ -33,15 +33,13 @@
           <p>楼层统计</p>
         </div>
         <div>
-          <img src="../assets/lcsyt.png">
+          <img src="../assets/lcsyt.png" @click="goto(lcsy())">
           <p>楼层示意图</p>
         </div>
         <div>
           <img src="../assets/fbtj.png" @click="goto(fbtj())">
           <p>发布统计</p>
         </div>
-
-
       </div>
     </div>
 
@@ -58,15 +56,30 @@
       rltj() {
         this.$router.push({path: "/rltj"});
       },
+      bjtj() {
+        this.$router.push({path: "/bjtj"});
+      },
       bjdt() {
         this.$router.push({path: "/bjdt"});
+      },
+      zhpm() {
+        this.$router.push({path: "/zhpm"});
+      },
+      pjtj() {
+        this.$router.push({path: "/pjtj"});
+      },
+      pdqk() {
+        this.$router.push({path: "/pdqk"});
+      },
+      lctj(){
+        this.$router.push({path: "/lctj"});
+      },
+      lcsy(){
+        this.$router.push({path: "/lcsy"});
       },
       fbtj(){
         this.$router.push({path: "/fbtj"});
       },
-      lctj(){
-        this.$router.push({path: "/lctj"});
-      }
 
     }
   }
@@ -89,6 +102,7 @@
       }
 
       .box {
+
         box-shadow: 0px 0px 28px 4px rgba(50, 154, 255, 0.2);
         width: 88%;
         margin-left: 6%;

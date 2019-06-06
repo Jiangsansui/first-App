@@ -20,18 +20,20 @@
            <img src="../assets/down.png">
            <span class="text">今日人流量高分时段分析</span>
          </div>
-<div class="time">高峰时间段
-  <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
+        <div class="time">
+ <p style=" margin-left: 4%;">高峰时间段</p>
+  <span  style=" margin-left: 4%;">1</span>
+  <span >4</span>
+  <p>:</p>
+  <span>3</span>
+  <span>0</span>
+  <p>~</p>
+  <span>1</span>
+  <span>5</span>
+  <p>:</p>
+  <span>3</span>
+  <span>3</span>
 
-  </ul>
 </div>
          <div id="myChartTwo">
          </div>
@@ -97,17 +99,23 @@
             itemStyle:{
               //通常情况下：
               normal:{
-
+                // color: new this.$echarts.graphic.LinearGradient(
+                //   0, 0, 1, 0,
+                //    [
+                //     {offset: 0, color: 'rgb(76,204,71)'},
+                //     {offset: 1, color: '#fef9e8'}
+                //   ],
+                // ),
                 // 每个柱子的颜色即为colorList数组里的每一项，
                 // 如果柱子数目多于colorList的长度，则柱子颜色循环使用该数组
-                // color: function (params){
-                //   var colorList =
-                //     ['rgb(76,204,71)',
-                //       'rgb(241,194,5)',
-                //       'rgb(50,154,255)'];
-                //   return colorList[params.dataIndex];
-                //
-                // },
+                color: function (params){
+                  var colorList =
+                    ['rgb(76,204,71)',
+                      'rgb(241,194,5)',
+                      'rgb(50,154,255)'];
+                  return colorList[params.dataIndex];
+
+                },
                 // color: function (params) {
                 //   var colorList = [
                 //     ['rgb(14,102,179)', 'rgb(51,36,169)'],
@@ -130,16 +138,16 @@
                 //       }
                 //     ]);
                 // },
-
-                color: new this.$echarts.graphic.LinearGradient(
-                  0, 0, 1, 0,
-                   [
-                    {offset: 0, color: 'rgb(76,204,71)'},
-                    {offset: 1, color: '#fef9e8'}
-                  ],
-
-
-                ),
+                //
+                // color: new this.$echarts.graphic.LinearGradient(
+                //   0, 0, 1, 0,
+                //    [
+                //     {offset: 0, color: 'rgb(76,204,71)'},
+                //     {offset: 1, color: '#fef9e8'}
+                //   ],
+                //
+                //
+                // ),
                 //柱形图圆角，初始化效果
                 barBorderRadius:[15, 15, 15, 15],
                 label: {
@@ -154,6 +162,7 @@
               },
             }
           }]
+
         })
         let myChartTwo = this.$echarts.init(document.getElementById('myChartTwo'))
         // 绘制第二个图
@@ -240,6 +249,7 @@
       ssdars() {
           this.$router.push({path: "/ssdars"});
         },
+
   }}
 </script>
 <style lang="scss" scoped>
@@ -282,6 +292,7 @@
     .boxTwo{
       margin-top: 10px;
       width: 98%;
+      padding-bottom: 45px;
       margin-left: 1%;
       border-radius: 20px;
       background-color: #ffffff;
@@ -302,31 +313,29 @@
              float: left;
              margin-left: 2%;
              font-size: 30px;
-
            }
          }
       .time{
         position: absolute;
         width: 100%;
         height: 50px;
-        /*background-color: cornflowerblue;*/
-        /*<!--background-image: -webkit-linear-gradient-->*/
-        /*<!--  (90deg, rgb(241,193,1), rgb(250,226,126));-->*/
         margin-top: 140px;
-        ul{
-          width: 100%;
-          height: 100%;
-          background-color: red;
-          display: flex;
-          flex-direction: row;
-          list-style: none;
-
-          li{
-            width: 40px;
-            height: 40px;
-            background-color: blue;
-          }
+        display: flex;
+        flex-direction: row;
+        font-size: 30px;
+        p{
+          margin-left: 2%;
+          margin-top:0;
+          font-size: 24px;
         }
+        span{
+              font-size: 32px;
+              width: 40px;
+              height: 40px;
+              background-image:-webkit-linear-gradient(90deg, rgb(241,193,1), rgb(250,226,126));
+              float: left;
+              margin-left: 2%;
+            }
       }
       #myChartTwo{
         padding-top:120px;
@@ -337,6 +346,57 @@
 
     }
   }
-}
+  @media screen and (min-height: 568px) {
+    .boxOne{
+      #myChart{
+        height: 550px !important;
+      }
+      .title{
+        padding-top: 10px !important;
+      }
+    }
 
+    .boxTwo{
+      width: 100%;
+      height: 630px ;
+      .time{
+        margin-top: 90px !important;
+      }
+      #myChartTwo{
+        padding-top:45px !important;
+      }
+    }
+  }
+  @media screen and (min-height: 667px) {
+    .boxTwo{
+      width: 100%;
+      height: 635px ;
+    }
+  }
+  @media screen and (min-height: 736px) {
+    .boxTwo{
+      width: 100%;
+      height: 635px ;
+    }
+  }
+  @media screen and (min-height: 812px) {
+    .boxTwo{
+      width: 100%;
+      height: 925px ;
+    }
+  }
+  @media screen and (min-height: 1024px) {
+    .boxTwo{
+      width: 100%;
+      height: 720px ;
+      .time{
+        margin-left: 5%;
+        margin-top: 120px !important;
+      }
+      #myChartTwo{
+        padding-top:140px !important;
+      }
+    }
+  }
+}
 </style>

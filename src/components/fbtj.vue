@@ -24,12 +24,8 @@
           <span class="dw">条</span>
           <div id="myChartTwo" :style="mapStyleTwo"></div>
         </div>
-
       </div>
-
     </div>
-
-
   </div>
 </template>
 <script>
@@ -143,7 +139,7 @@
 <style lang="scss" scoped>
   .container {
     width: 100%;
-    /*overflow: hidden;*/
+    overflow: hidden;
     .content {
       width: 100%;
       .contOne {
@@ -151,8 +147,9 @@
         height:630px;
         background-color: #ffffff;
         margin-left: 2%;
-        margin-top: 18px;
+        margin-top: 10px;
         border-radius: 20px;
+        padding-bottom: 18px;
 
         .logo {
           float: left;
@@ -182,18 +179,16 @@
               color: rgb(160,160,160);
             }
           }
-
         }
-
       }
-
       .contTwo {
         width: 96%;
         height: 640px;
         background-color: #ffffff;
         margin-left: 2%;
-        margin-top: 20px;
+        margin-top: 10px;
         border-radius: 20px;
+        padding-bottom: 15px;
         .logo {
           float: left;
           margin-left: 3%;
@@ -209,7 +204,6 @@
           }
         }
         .circle {
-
           padding-top: 30px;
           .num {
             color: #d941e9;
@@ -229,10 +223,103 @@
           }
           #myChartTwo{
             margin-top: 10% !important;
-
           }
         }
       }
+    }
+    @media screen and (max-height: 812px) {
+      .contOne{
+         padding-bottom: 160px !important;
+       #myChart{
+         margin-left: 9% !important;
+       }
+     }
+      .contTwo{
+        padding-bottom: 160px !important;
+         .circle {
+           .num {
+             margin-left: -32% !important;
+           }
+           .dw{
+             margin-left: -6% !important;
+             margin-top:350px !important;
+           }
+           #myChartTwo {
+                  margin-left: 9% !important;
+                 }
+              }
+      }
+    }
+    @media screen and (max-height: 736px) {
+      .contOne{
+        padding-bottom: 20px !important;
+        #myChart{
+          margin-left: 14% !important;
+        }
+      }
+      .contTwo{
+        padding-bottom: 15px !important;
+        .circle {
+          .num {
+            margin-left: -32% !important;
+          }
+          .dw{
+            margin-left: -6% !important;
+            margin-top:350px !important;
+          }
+          #myChartTwo {
+            margin-left: 14% !important;
+          }
+        }
+      }
+    }
+    @media screen and (max-height: 667px) {
+      .content{
+        .contOne{
+          #myChart{
+            margin-left: 10% !important;
+          }
+        }
+        .contTwo{
+          .circle {
+            .num {
+              margin-left: -30% !important;
+            }
+            .dw{
+              margin-left: -5% !important;
+              margin-top:350px !important;
+            }
+            #myChartTwo {
+              margin-left: 11% !important;
+            }
+          }
+        }
+      }
+
+    }
+    @media screen and (max-height: 320px) {
+      .content{
+        .contOne{
+          #myChart{
+            margin-left: 10% !important;
+          }
+        }
+        .contTwo{
+          .circle {
+            .num {
+              margin-left: -30% !important;
+            }
+            .dw{
+              margin-left: -5% !important;
+              margin-top:350px !important;
+            }
+            #myChartTwo {
+              margin-left: 11% !important;
+            }
+          }
+        }
+      }
+
     }
   }
 

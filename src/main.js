@@ -8,6 +8,8 @@ import router from './router'
 import echarts from 'echarts'
 import'lib-flexible'
 
+
+
 Vue.use(ElementUI);
 Vue.prototype.$echarts = echarts
 

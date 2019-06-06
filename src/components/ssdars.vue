@@ -5,6 +5,11 @@
                    <img src="../assets/down.png">
                    <span class="text">实时等待人数</span>
                  </div>
+               <div class="right">
+                 <span>人</span>
+                 <span style="margin-top:-6px;color:rgb(48,175,242);font-size: 30px;font-weight: bolder;">256</span>
+                 <span>总计:</span>
+               </div>
                <div id="myChart"
                     :style="{width: '300px',
                       paddingBottom:'94px',
@@ -119,20 +124,29 @@
   border-radius: 20px;
   margin-top: 10px;
   .head{
-    position: relative;
+    padding-top: 30px;
     width: 100%;
-    padding-top: 35px;
-      img{
-        float: left;
-        margin-left: 4%;
-        width: 24px;
-        height: 18px;
-      }
-      span{
-        float: left;
-        margin-left: 3%;
-        font-size: 32px;
-        margin-top: -15px;
+    img{
+      margin-top: 13px;
+      float: left;
+      margin-left: 4%;
+      width: 24px;
+      height: 18px;
+    }
+    .text{
+      color:rgb(4,45,16);
+      float: left;
+      margin-left: 2%;
+      font-size: 30px;
+    }
+  }
+  .right{
+    span{
+      margin-top: 20px;
+      font-size:15px;
+      color: #c8c8c8;
+      float: right;
+      padding-right: 2%;
     }
   }
   .tip{
@@ -144,14 +158,14 @@
       width: 33.3%;
     }
 .fk{
-  margin-left: -4%;
+  margin-left: 1%;
   position: absolute;
   width: 26px;
   height: 26px;
 }
     span{
       font-size: 24px;
-      margin-left: 3%;
+      margin-left:20%;
       margin-top: 4px;
     }
   }
@@ -168,7 +182,6 @@
             float: left;
             margin-left: 13%;
           }
-
           .fk{
             margin-left: 6%;
             margin-right: 20px;
@@ -179,37 +192,58 @@
             margin-top: 5px;
           }
           .right{
-color: #b8b8b8;
+            display: flex;
+            flex-direction: row;
+            color: #b8b8b8;
             float: right;
-            margin-right: 5%;
-.one{
-  font-size: 32px;
-  font-weight: bolder;
-}
+            margin-right: 8%;
+          .one{
+            margin-top: -6px;
+            font-size: 32px;
+            font-weight: bolder;
+             }
           }
        }
-  }
-
+    }
 }
-    @media screen and(min-height:667px) {
-
-      .footer{
-        height: 380px;
-      }
-    }
-    @media screen and(min-height:736px) {
-      .footer{
-        height: 450px;
-      }
-    }
-    @media screen and(min-height:812px) {
-      .footer{
-        height: 670px;
-      }
-    }
-  @media screen and(max-height:568px) {
+  @media screen and (min-height: 568px) {
     .footer{
-      height: 230px;
+      padding-bottom: 35px;
+
+    }
+  }
+  @media screen and (min-height: 667px) {
+    .footer{
+   padding-bottom: 180px !important;
+    }
+  }
+  @media screen and (min-height: 640px) {
+      .footer{
+        padding-bottom: 150px;
+    }
+  }
+  @media screen and (min-height: 736px) {
+    .footer{
+     padding-bottom: 230px !important;
+      .line{
+        padding-bottom: 8px;
+      }
+    }
+  }
+  @media screen and (min-height: 812px) {
+    .footer{
+     padding-bottom: 450px !important;
+      .line{
+        padding-bottom: 8px;
+      }
+    }
+  }
+  @media screen and (min-height: 1024px) {
+    #myChart{
+      margin-left: 30% !important;
+    }
+    .footer{
+      padding-bottom: 490px !important;
     }
   }
   }

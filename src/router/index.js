@@ -1,19 +1,25 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
-import bjtj from '@/components/bjtj'
-import bjdt from '@/components/bjdt'
-import fbtj from '@/components/fbtj'
+
 import rltj from '@/components/rltj'
 import ssdars from '@/components/ssdars'
+
+import bjtj from '@/components/bjtj'
+import bjdt from '@/components/bjdt'
+
+import pdqk from '@/components/pdqk'
+import zhpm from '@/components/zhpm'
+import zhpmxq from '@/components/zhpmxq'
+import pjtj from '@/components/pjtj'
+import sjlxq from '@/components/sjlxq'
+
+
 import cqjy from '@/components/cqjy'
 import Index from '@/components/Index'
-import Appraise from '@/components/Appraise'
-import Window from '@/components/Window'
-// import Info from '@/components/Info'
-import Details from '@/components/Details'
-import True from '@/components/True'
-import Paidui from '@/components/Paidui'
+import fbtj from '@/components/fbtj'
+
+import lcsy from '@/components/lcsy'
 import lctj from '@/components/lctj'
 
 Vue.use(Router)
@@ -26,14 +32,44 @@ export default new Router({
       component: Home
     },
     {
+      path: '/rltj',
+      name: 'rltj',
+      component: rltj
+    },
+    {
       path: '/bjtj',
       name: 'bjtj',
       component: bjtj
     },
     {
+      path: '/sjlxq',
+      name: 'sjlxq',
+      component: sjlxq
+    },
+    {
       path: '/bjdt',
       name: 'bjdt',
       component: bjdt
+    },
+    {
+      path: '/pdqk',
+      name: 'pdqk',
+      component: pdqk
+    },
+    {
+      path: '/zhpm',
+      name: 'zhpm',
+      component: zhpm
+    },
+    {
+      path: '/zhpmxq',
+      name: 'zhpmxq',
+      component: zhpmxq
+    },
+    {
+      path: '/pjtj',
+      name: 'pjtj',
+      component: pjtj
     },
     {
       path: '/fbtj',
@@ -46,6 +82,11 @@ export default new Router({
       component: ssdars
     },
     {
+      path: '/lcsy',
+      name: 'lcsy',
+      component: lcsy
+    },
+    {
       path: '/lctj',
       name: 'lctj',
       component: lctj
@@ -55,48 +96,11 @@ export default new Router({
       name: 'cqjy',
       component: cqjy
     },
-
-    {
-      path: '/rltj',
-      name: 'rltj',
-      component: rltj
-    },
-
-    {
-      path: '/appraise',
-      name: 'Appraise',
-      component: Appraise
-    },
-    {
-      path: '/Window',
-      name: 'Window',
-      component: Window
-    },
-    // {
-    //   path: '/info',
-    //   name: 'Info',
-    //   component: Info
-    // },
-
-    {
-      path: '/details',
-      name: 'Details',
-      component: Details
-    },
     {
       path: '/index',
       name: 'Index',
       component: Index
-    },
-    {
-      path: '/True',
-      name: 'True',
-      component: True
-    },
-    {
-    path: '/Paidui',
-    name: 'Paidui',
-    component: Paidui
-  }
+    }
+
   ]
 })
