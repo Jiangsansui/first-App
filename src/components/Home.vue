@@ -1,43 +1,42 @@
 <template>
   <div class="container">
-
     <div class="content">
       <img src="../assets/bgt.png">
       <div class="box">
         <div>
-        <img src="../assets/rltj.png" @click="goto(rltj())">
-        <p>人流统计</p>
-      </div>
+          <img src="../assets/rltj.png" @click="$router.push('rltj')">
+          <p>人流统计</p>
+        </div>
         <div>
-          <img src="../assets/bjtj.png" @click="goto(bjtj())">
+          <img src="../assets/bjtj.png" @click="$router.push('bjtj')">
           <p>办件统计</p>
         </div>
         <div>
-          <img src="../assets/bjdt.png" @click="goto(bjdt())">
+          <img src="../assets/bjdt.png" @click="$router.push('bjdt')">
           <p>办件动态</p>
         </div>
         <div>
-          <img src="../assets/pdqk.png" @click="goto(pdqk())">
+          <img src="../assets/pdqk.png" @click="$router.push('pdqk')">
           <p>排队情况</p>
         </div>
         <div>
-          <img src="../assets/zhpm.png" @click="goto(zhpm())">
+          <img src="../assets/zhpm.png" @click="$router.push('zhpm')">
           <p>综合排名</p>
         </div>
         <div>
-          <img src="../assets/pjtj.png" @click="goto(pjtj())">
+          <img src="../assets/pjtj.png" @click="$router.push('pjtj')">
           <p>评价统计</p>
         </div>
         <div>
-          <img src="../assets/lctj.png" @click="goto(lctj())">
+          <img src="../assets/lctj.png" @click="$router.push('lctj')">
           <p>楼层统计</p>
         </div>
         <div>
-          <img src="../assets/lcsyt.png" @click="goto(lcsy())">
+          <img src="../assets/lcsyt.png" @click="$router.push('lcsy')">
           <p>楼层示意图</p>
         </div>
         <div>
-          <img src="../assets/fbtj.png" @click="goto(fbtj())">
+          <img src="../assets/fbtj.png" @click="$router.push('fbtj')">
           <p>发布统计</p>
         </div>
       </div>
@@ -53,34 +52,6 @@
       return {}
     },
     methods: {
-      rltj() {
-        this.$router.push({path: "/rltj"});
-      },
-      bjtj() {
-        this.$router.push({path: "/bjtj"});
-      },
-      bjdt() {
-        this.$router.push({path: "/bjdt"});
-      },
-      zhpm() {
-        this.$router.push({path: "/zhpm"});
-      },
-      pjtj() {
-        this.$router.push({path: "/pjtj"});
-      },
-      pdqk() {
-        this.$router.push({path: "/pdqk"});
-      },
-      lctj(){
-        this.$router.push({path: "/lctj"});
-      },
-      lcsy(){
-        this.$router.push({path: "/lcsy"});
-      },
-      fbtj(){
-        this.$router.push({path: "/fbtj"});
-      },
-
     }
   }
 </script>
@@ -96,13 +67,10 @@
     .content {
       width: 100%;
       position: relative;
-
       img {
         width: 100%;
       }
-
       .box {
-
         box-shadow: 0px 0px 28px 4px rgba(50, 154, 255, 0.2);
         width: 88%;
         margin-left: 6%;
@@ -111,18 +79,15 @@
         border-radius: 20px;
         background-color: rgb(255, 255, 255);
         position: absolute;
-
         div {
           padding-top: 0.5rem;
           float: left;
           width: 33.3%;
           position: relative;
-
           img {
             width:98px;
             height: 98px;
           }
-
           p {
             color: rgb(24, 27, 36);
             font-family: "STHeiti STXihei";
@@ -131,9 +96,7 @@
             padding-top: 0.1rem;
             padding-bottom: 0.25rem;
           }
-
         }
-
         div::before {
           content: '';
           position: absolute;
@@ -149,7 +112,6 @@
           -webkit-box-sizing: border-box;
           box-sizing: border-box
         }
-
         div::after {
           content: '';
           position: absolute;
@@ -165,14 +127,12 @@
           -webkit-box-sizing: border-box;
           box-sizing: border-box
         }
-
         div:nth-last-of-type(1):before,
         div:nth-last-of-type(2):before,
         div:nth-last-of-type(3):before {
           content: '';
           border-bottom: 0;
         }
-
         div:nth-of-type(3):after,
         div:nth-of-type(6):after,
         div:nth-last-of-type(1):after {
@@ -181,9 +141,5 @@
         }
       }
     }
-
-
   }
-
-
 </style>

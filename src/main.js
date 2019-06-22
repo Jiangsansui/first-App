@@ -7,11 +7,14 @@ import App from './App'
 import router from './router'
 import echarts from 'echarts'
 import'lib-flexible'
-
-
+import axios from 'axios'
+import $ from 'jquery'
 
 Vue.use(ElementUI);
+Vue.prototype.$axios = axios
+Vue.prototype.$ = $
 Vue.prototype.$echarts = echarts
+axios.defaults.baseURL="http://10.10.2.11:8037"
 
 
 Vue.config.productionTip = false

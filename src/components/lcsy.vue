@@ -2,64 +2,60 @@
   <div class="container">
     <div class="content">
       <div class="main">
-          <div class="left">
-            <ul>
-              <li :class="tabs == 1 ? 'act' : ''" style="margin-left: -5%" @click="tabs=1">一层</li>
-              <li :class="tabs == 2 ? 'act' : ''" style="margin-left: 5%" @click="tabs=2">二层</li>
-              <li :class="tabs == 3 ? 'act' : ''" style="margin-left: 5%" @click="tabs=3">三层</li>
-            </ul>
-          </div>
-
-        <img v-if="tabs==1" src="../assets/firstfloor.png">
-        <img v-if="tabs==2" src="../assets/secondfloor.png">
-        <img v-if="tabs==3" src="../assets/thirdfloor.png">
-          <div class="text">视图说明</div>
+        <div class="left">
+          <ul>
+            <li :class="tabs == 1 ? 'act' : ''" style="margin-left: -5%" @click="tabs=1">一层</li>
+            <li :class="tabs == 2 ? 'act' : ''" style="margin-left: 5%" @click="tabs=2">二层</li>
+            <li :class="tabs == 3 ? 'act' : ''" style="margin-left: 5%" @click="tabs=3">三层</li>
+          </ul>
+        </div>
+        <div class="bgImg">
+          <img v-if="tabs==1" src="../assets/firstfloor.png">
+          <img v-if="tabs==2" src="../assets/secondfloor.png">
+          <img v-if="tabs==3" src="../assets/thirdfloor.png">
+        </div>
+        <div class="text">视图说明</div>
         <div class="express">
           <ul>
             <li v-for="item in list">{{item.name}}</li>
-
           </ul>
         </div>
       </div>
-
     </div>
   </div>
-
 </template>
-
 <script>
-    export default {
-        name: "lcsy",
-      data(){
-        return {
-          tabs:1,
-list:[
-  {name:'1 咨询（红色事项）'},
-  {name:'2 投资项目综合1'},
-  {name:'3 投资项目综合2'},
-  {name:'4 商事登记综合'},
-  {name:'5 税务综合1'},
-  {name:'6 税务综合2'},
-  {name:'7 公安'},
-  {name:'8 交警'},
-  {name:'9 个人代收'},
-  {name:'10 水电气综合'},
-  {name:'11 环保'},
-  {name:'12 不动产登记综合'},
-  {name:'13 综合行政执法'},
-  {name:'14 其他事务综合'},
-  {name:'15 台州湾集聚区'},
-  {name:'16 特色小镇'},
+  export default {
+    name: "lcsy",
+    data(){
+      return {
+        tabs:1,
+        list:[
+          {name:'1 咨询（红色事项）'},
+          {name:'2 投资项目综合1'},
+          {name:'3 投资项目综合2'},
+          {name:'4 商事登记综合'},
+          {name:'5 税务综合1'},
+          {name:'6 税务综合2'},
+          {name:'7 公安'},
+          {name:'8 交警'},
+          {name:'9 个人代收'},
+          {name:'10 水电气综合'},
+          {name:'11 环保'},
+          {name:'12 不动产登记综合'},
+          {name:'13 综合行政执法'},
+          {name:'14 其他事务综合'},
+          {name:'15 瓯江口集聚区'},
+          {name:'16 特色小镇'},
 
-]
-        }
-      },
+        ]
+      }
+    },
 
-    }
+  }
 </script>
 
 <style lang="scss" scoped>
-
   .container{
     overflow: hidden;
     width: 100%;
@@ -71,7 +67,7 @@ list:[
         margin-top: 10px;
         margin-left: 2%;
         border-radius: 20px;
-        padding-bottom: 180px;
+        padding-bottom: 150px;
         .left{
           width: 100%;
           padding-top: 10px;
@@ -87,18 +83,18 @@ list:[
               border-radius: 19px;
               width: 13%;
               height: 40px;
-
             }
             .act{
-
               color: #ffffff;
               background-color: #329aff;
             }
           }
         }
-         img{
+        .bgImg{
+          height: 600px;
+        }
+        img{
           width:100%;
-
         }
         .text{
           width: 30%;
@@ -116,7 +112,6 @@ list:[
             flex-wrap: wrap;
           }
           li{
-
             padding-top: 25px;
             display: inline-block;
             text-align: left;
@@ -141,15 +136,74 @@ list:[
         }
       }
     }
-
-    @media screen and (min-height: 736px) {
-        .main{
-              padding-bottom:210px !important;
+    @media screen and (max-height: 570px) {
+      .main{
+        padding-bottom:100px !important;
+        .bgImg{
+          height: 575px !important;
+        }
+      }
+      .express{
+        ul{
+          margin-left: -6% !important;
+          li{
+            padding-top: 16px !important;
+            letter-spacing:0px !important;
           }
+        }
+      }
+    }
+    @media screen and (min-height: 736px) {
+
+      .main{
+        padding-bottom:234px !important;
+        .bgImg{
+          height: 540px !important;
+        }
+      }
     }
     @media screen and (min-height: 812px) {
       .main{
-        padding-bottom:470px !important;
+        padding-bottom:440px !important;
+        .bgImg{
+          height: 600px !important;
+        }
+      }
+    }
+    @media screen and (min-height: 1024px) {
+      .main{
+        padding-bottom:100px !important;
+        .bgImg{
+          height: 780px !important;
+        }
+        .express{
+          ul{
+            margin-left: 6% !important;
+          }
+        }
+      }
+    }
+    @media screen and (min-height: 1366px) {
+      .main{
+        margin-top: 20px !important;
+        .left{
+          margin-left: 6% !important;
+        }
+        padding-bottom:176px !important;
+        .bgImg{
+          height: 1080px !important;
+        }
+        .text{
+          font-size: 42px !important;
+        }
+        .express{
+          ul{
+            margin-left: 6% !important;
+            li{
+              font-size: 30px!important;
+            }
+          }
+        }
       }
     }
   }

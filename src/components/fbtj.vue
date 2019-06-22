@@ -1,28 +1,38 @@
 <template>
   <div class="container">
     <div class="content">
-      <div class="contOne">
-        <div class="logo">
-          <img src="./../assets/down.png">
-          <span>信息日发布数</span>
+      <div class="boxOne boxPub">
+        <div class="head">
+          <img src="../assets/down.png">
+          <span class="text">信息日发布数</span>
         </div>
-        <div class="circle">
-          <div class="text">
-          <span class="num">236</span>
-          <span class="dw">条</span>
+        <div class="main">
+          <div id="myChart"
+               style="width:100%;height: 300px;
+                     display: -webkit-box;
+                     -webkit-box-orient: horizontal;">
           </div>
-          <div id="myChart" :style="mapStyle"></div>
+          <div class="text">
+            <span class="num blue">236</span>
+            <span>人</span>
+          </div>
         </div>
       </div>
-      <div class="contTwo">
-              <div class="logo">
-                <img src="./../assets/down.png">
-                <span>累计信息发布数</span>
-              </div>
-        <div class="circle">
-          <span class="num">1366</span>
-          <span class="dw">条</span>
-          <div id="myChartTwo" :style="mapStyleTwo"></div>
+      <div class="boxTwo boxPub">
+        <div class="head">
+          <img src="../assets/down.png">
+          <span class="text">累计信息发布数</span>
+        </div>
+        <div class="main">
+          <div id="myChartTwo"
+               style="width:100%;height: 300px;
+                     display: -webkit-box;
+                     -webkit-box-orient: horizontal;">
+          </div>
+          <div class="text">
+            <span class="num purple">123</span>
+            <span>人</span>
+          </div>
         </div>
       </div>
     </div>
@@ -33,20 +43,7 @@
     name: 'day',
     data() {
       return {
-        mapStyle: {
-          height: '300px',
-          width: '300px',
-          marginLeft: '14%',
-          marginTop: '10%',
-          position: 'absolute'
-        },
-        mapStyleTwo: {
-          height: '300px',
-          width: '300px',
-          marginLeft: '14%',
-          marginTop: '100%',
-          position: 'absolute'
-        },
+        xxNum: 132,
       }
     },
     mounted() {
@@ -132,196 +129,64 @@
         });
       }
     }
-
   }
 </script>
-
 <style lang="scss" scoped>
   .container {
-    width: 100%;
     overflow: hidden;
+    width: 100%;
     .content {
       width: 100%;
-      .contOne {
-        width: 96%;
-        height:630px;
-        background-color: #ffffff;
-        margin-left: 2%;
-        margin-top: 10px;
-        border-radius: 20px;
-        padding-bottom: 18px;
-
-        .logo {
-          float: left;
-          margin-left: 3%;
-          margin-top: 0.3rem;
-          img {
-            width: 0.4rem;
-          }
-          span {
-            font-size: 0.4rem;
-            padding-left: 0.2rem;
-          }
-        }
-        .circle {
-          position: relative;
-          .text{
-            position: absolute;
-            padding-top: 300px;
-            margin-left: 40%;
-            .num {
-              color:  #1f8be9;
-              font-size: 72px;
-              font-weight: bold;
-            }
-            .dw{
-              font-size: 30px;
-              color: rgb(160,160,160);
-            }
-          }
-        }
+      .blue {
+        color: #1f8be9;
       }
-      .contTwo {
+      .purple {
+        color: #d941e9;
+      }
+      .boxPub {
         width: 96%;
         height: 640px;
         background-color: #ffffff;
         margin-left: 2%;
-        margin-top: 10px;
+        margin-top: 15px;
         border-radius: 20px;
-        padding-bottom: 15px;
-        .logo {
-          float: left;
-          margin-left: 3%;
-          margin-top: 0.3rem;
-
-          img {
-            width: 0.4rem;
-          }
-
-          span {
-            font-size: 0.4rem;
-            padding-left: 0.2rem;
-          }
-        }
-        .circle {
+        .head {
           padding-top: 30px;
-          .num {
-            color: #d941e9;
-            font-size: 72px;
-            margin-left: -2.8rem;
-            position: absolute;
-            margin-top: 4.2rem;
-            font-weight: bold;
-
+          width: 100%;
+          img {
+            margin-top: 13px;
+            float: left;
+            margin-left: 4%;
+            width: 24px;
+            height: 18px;
           }
-          .dw{
-           margin-left: 1%;
-            position: absolute;
+          .text {
+            color: rgb(4, 45, 16);
+            float: left;
+            margin-left: 2%;
             font-size: 30px;
-            margin-top: 4.5rem;
-            color: rgb(160,160,160);
-          }
-          #myChartTwo{
-            margin-top: 10% !important;
           }
         }
-      }
-    }
-    @media screen and (max-height: 812px) {
-      .contOne{
-         padding-bottom: 160px !important;
-       #myChart{
-         margin-left: 9% !important;
-       }
-     }
-      .contTwo{
-        padding-bottom: 160px !important;
-         .circle {
-           .num {
-             margin-left: -32% !important;
-           }
-           .dw{
-             margin-left: -6% !important;
-             margin-top:350px !important;
-           }
-           #myChartTwo {
-                  margin-left: 9% !important;
-                 }
-              }
-      }
-    }
-    @media screen and (max-height: 736px) {
-      .contOne{
-        padding-bottom: 20px !important;
-        #myChart{
-          margin-left: 14% !important;
-        }
-      }
-      .contTwo{
-        padding-bottom: 15px !important;
-        .circle {
-          .num {
-            margin-left: -32% !important;
-          }
-          .dw{
-            margin-left: -6% !important;
-            margin-top:350px !important;
-          }
-          #myChartTwo {
-            margin-left: 14% !important;
-          }
-        }
-      }
-    }
-    @media screen and (max-height: 667px) {
-      .content{
-        .contOne{
-          #myChart{
-            margin-left: 10% !important;
-          }
-        }
-        .contTwo{
-          .circle {
+        .main {
+          width: 100%;
+          position: relative;
+          .text {
+            display: block;
+            width: 260px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -18px 0 0 -130px;
             .num {
-              margin-left: -30% !important;
-            }
-            .dw{
-              margin-left: -5% !important;
-              margin-top:350px !important;
-            }
-            #myChartTwo {
-              margin-left: 11% !important;
+              font-size: 68px;
+              font-weight: bold;
             }
           }
         }
       }
-
-    }
-    @media screen and (max-height: 320px) {
-      .content{
-        .contOne{
-          #myChart{
-            margin-left: 10% !important;
-          }
-        }
-        .contTwo{
-          .circle {
-            .num {
-              margin-left: -30% !important;
-            }
-            .dw{
-              margin-left: -5% !important;
-              margin-top:350px !important;
-            }
-            #myChartTwo {
-              margin-left: 11% !important;
-            }
-          }
-        }
-      }
-
     }
   }
-
-
 </style>

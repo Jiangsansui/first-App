@@ -72,39 +72,39 @@
       :backgroundColor="backgroundColor"
     >
     </circle-progress>
-<!--    <ul>-->
-<!--      <li>-->
-<!--        <label for="width">圆宽（px）:</label>-->
-<!--        <input v-model="width" id="width" type="number" placeholder="例如：140"></li>-->
-<!--      <li>-->
-<!--        <label for="radius">进度条宽度（px）:</label>-->
-<!--        <input v-model="radius" id="radius" type="number" placeholder="例如：12"></li>-->
-<!--      <li>-->
-<!--        <label for="progress">进度百分比:</label>-->
-<!--        <input v-model="progress" id="progress" type="text" placeholder="例如：70"></li>-->
-<!--      <li>-->
-<!--        <label for="barColor">进度条颜色:</label>-->
-<!--        <input v-model="barColor" id="barColor" type="text" placeholder="例如：#f5a623"></li>-->
-<!--      <li>-->
-<!--        <label for="backgroundColor">背景颜色:</label>-->
-<!--        <input v-model="backgroundColor" id="backgroundColor" type="text" placeholder="例如：#FFE8CC">-->
-<!--      </li>-->
-<!--      <li>-->
-<!--        <label for="duration">动画时长（ms）:</label>-->
-<!--        <input v-model="duration" id="duration" type="number" placeholder="例如：1000">-->
-<!--      </li>-->
-<!--      <li>-->
-<!--        <label for="delay">延迟执行（ms）:</label>-->
-<!--        <input v-model="delay" id="delay" type="number" placeholder="例如：20">-->
-<!--      </li>-->
-<!--      <li>-->
-<!--        <label for="timeFunction">缓动算法:</label>-->
-<!--        <input v-model="timeFunction" id="timeFunction" type="text" placeholder="例如：cubic-bezier(0.99, 0.01, 0.22, 0.94)">-->
-<!--      </li>-->
-<!--      <li>-->
-<!--        <div class="btn" @click="reset">重置动画</div>-->
-<!--      </li>-->
-<!--    </ul>-->
+    <!--    <ul>-->
+    <!--      <li>-->
+    <!--        <label for="width">圆宽（px）:</label>-->
+    <!--        <input v-model="width" id="width" type="number" placeholder="例如：140"></li>-->
+    <!--      <li>-->
+    <!--        <label for="radius">进度条宽度（px）:</label>-->
+    <!--        <input v-model="radius" id="radius" type="number" placeholder="例如：12"></li>-->
+    <!--      <li>-->
+    <!--        <label for="progress">进度百分比:</label>-->
+    <!--        <input v-model="progress" id="progress" type="text" placeholder="例如：70"></li>-->
+    <!--      <li>-->
+    <!--        <label for="barColor">进度条颜色:</label>-->
+    <!--        <input v-model="barColor" id="barColor" type="text" placeholder="例如：#f5a623"></li>-->
+    <!--      <li>-->
+    <!--        <label for="backgroundColor">背景颜色:</label>-->
+    <!--        <input v-model="backgroundColor" id="backgroundColor" type="text" placeholder="例如：#FFE8CC">-->
+    <!--      </li>-->
+    <!--      <li>-->
+    <!--        <label for="duration">动画时长（ms）:</label>-->
+    <!--        <input v-model="duration" id="duration" type="number" placeholder="例如：1000">-->
+    <!--      </li>-->
+    <!--      <li>-->
+    <!--        <label for="delay">延迟执行（ms）:</label>-->
+    <!--        <input v-model="delay" id="delay" type="number" placeholder="例如：20">-->
+    <!--      </li>-->
+    <!--      <li>-->
+    <!--        <label for="timeFunction">缓动算法:</label>-->
+    <!--        <input v-model="timeFunction" id="timeFunction" type="text" placeholder="例如：cubic-bezier(0.99, 0.01, 0.22, 0.94)">-->
+    <!--      </li>-->
+    <!--      <li>-->
+    <!--        <div class="btn" @click="reset">重置动画</div>-->
+    <!--      </li>-->
+    <!--    </ul>-->
   </section>
 </template>
 <script>

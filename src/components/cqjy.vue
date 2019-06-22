@@ -1,66 +1,48 @@
 <template>
   <div class="container">
-    <div class="search">
-      <span>产权交易</span>
-      <input type="text" placeholder="请输入内容"></input>
-      <img src="../assets/search.png">
+    <div class="search" >
+      <span >产权交易</span>
+      <input type="text" placeholder="请输入内容" ></input>
+      <img src="../assets/search.png"  >
     </div>
     <div class="head">
-        <ul>
-            <li style="margin-left: -6%">申报人</li>
-            <li style="margin-left: 10%">申报号</li>
-            <li style="margin-left: 16%">申报事项</li>
-            <li style="margin-left: 22%">申报时间</li>
-        </ul>
+      <ul>
+        <li style="margin-left: -6%">申报人</li>
+        <li style="margin-left: 10%">申报号</li>
+        <li style="margin-left: 16%">申报事项</li>
+        <li style="margin-left: 22%">申报时间</li>
+      </ul>
     </div>
     <div class="content">
       <div class="message">
-        <ul>
-          <li style="margin-left: -6%">张某先生</li>
-          <li style="margin-left:7%">1***********7</li>
-          <li style="margin-left: 7%">失业登记表</li>
-          <li >2019.3.18 13：48</li>
+        <ul v-for="item in list">
+          <li style="margin-left: -6%">{{item.name}}</li>
+          <li style="margin-left:7%">{{item.num}}</li>
+          <li style="margin-left: 7%">{{item.event}}</li>
+          <li >{{item.date}}</li>
         </ul>
-        <ul>
-          <li style="margin-left: -6%">张某先生</li>
-          <li style="margin-left:7%">1***********7</li>
-          <li style="margin-left: 7%">失业登记表</li>
-          <li >2019.3.18 13：48</li>
-        </ul>
-        <ul>
-          <li style="margin-left: -6%">张某先生</li>
-          <li style="margin-left:7%">1***********7</li>
-          <li style="margin-left: 7%">失业登记表</li>
-          <li >2019.3.18 13：48</li>
-        </ul>
-        <ul>
-          <li style="margin-left: -6%">张某先生</li>
-          <li style="margin-left:7%">1***********7</li>
-          <li style="margin-left: 7%">失业登记表</li>
-          <li >2019.3.18 13：48</li>
-        </ul>
-        <ul>
-          <li style="margin-left: -6%">张某先生</li>
-          <li style="margin-left:7%">1***********7</li>
-          <li style="margin-left: 7%">失业登记表</li>
-          <li >2019.3.18 13：48</li>
-        </ul>
-        <ul>
-          <li style="margin-left: -6%">张某先生</li>
-          <li style="margin-left:7%">1***********7</li>
-          <li style="margin-left: 7%">失业登记表</li>
-          <li >2019.3.18 13：48</li>
-        </ul>
-
       </div>
-     </div>
     </div>
-
+  </div>
 </template>
-
 <script>
   export default {
-
+    data(){
+      return{
+        list:[
+          {name:'张某先生',num:'1***********7',event:'失业登记表',date:'2019.3.18 13：48'},
+          {name:'张某先生',num:'1***********7',event:'失业登记表',date:'2019.3.18 13：48'},
+          {name:'张某先生',num:'1***********7',event:'失业登记表',date:'2019.3.18 13：48'},
+          {name:'张某先生',num:'1***********7',event:'失业登记表',date:'2019.3.18 13：48'},
+          {name:'张某先生',num:'1***********7',event:'失业登记表',date:'2019.3.18 13：48'},
+          {name:'张某先生',num:'1***********7',event:'失业登记表',date:'2019.3.18 13：48'},
+          {name:'张某先生',num:'1***********7',event:'失业登记表',date:'2019.3.18 13：48'},
+          {name:'张某先生',num:'1***********7',event:'失业登记表',date:'2019.3.18 13：48'}
+        ]
+      }
+    },
+    methods: {
+    }
   }
 </script>
 <style lang="scss" scoped>
@@ -68,37 +50,35 @@
     overflow: hidden;
     width: 100%;
     .search{
-  box-shadow: 0px 0px 3px 2px #c8c8c8;
-
-  width: 100%;
-  height: 90px;
-  background-color: #ffffff;
-span{
-  margin-left: 4%;
-  line-height: 90px;
-  float: left;
-  font-size: 28px;
-}
-  input{
-    width: 50%;
-    height: 56px;
-    background-color: rgb(238,238,238);
-    border-radius: 12px;
-    padding-left: 4%;
-    border: none;
-    outline: none;
-    font-size: 24px;
-    margin-top: 17px;
-
-    margin-left: 12%;
-  }
-  img{
-    width: 40px;
-    float: right;
-    padding-top: 25px;
-    margin-right: 4%;
-  }
-}
+      box-shadow: 0px 0px 3px 2px #c8c8c8;
+      width: 100%;
+      height: 90px;
+      background-color: #ffffff;
+      span{
+        margin-left: 4%;
+        line-height: 90px;
+        float: left;
+        font-size: 28px;
+      }
+      input{
+        width: 50%;
+        height: 56px;
+        background-color: rgb(238,238,238);
+        border-radius: 12px;
+        padding-left: 4%;
+        border: none;
+        outline: none;
+        font-size: 24px;
+        margin-top: 17px;
+        margin-left: 12%;
+      }
+      img{
+        width: 40px;
+        float: right;
+        padding-top: 25px;
+        margin-right: 4%;
+      }
+    }
     .head{
       margin-top: -2%;
       height: 70px;
@@ -120,7 +100,6 @@ span{
     .content{
       margin-top: 10px;
       width: 98%;
-
       margin-left: 1%;
       background-color: #ffffff;
       .message{
@@ -134,7 +113,6 @@ span{
             padding-top: 20px;
             padding-bottom: 20px;
             font-size: 22px;
-
           }
           li:last-child{
             margin-left:10%;
@@ -145,9 +123,6 @@ span{
       }
     }
   }
-
-
-
 </style>
 
 
