@@ -33,12 +33,12 @@
       <div class="boxThree">
         <div class="head">
           <img src="../assets/down.png">
-          <span class="text">等待人数</span>
+          <span class="text">平均等待时间</span>
         </div>
         <div class="right">
-          <span>总量:</span>
+          <span>平均等待时间:</span>
           <span class="num">256</span>
-          <span>人</span>
+          <span>分</span>
         </div>
         <div id="myChartThree"></div>
       </div>
@@ -79,23 +79,26 @@
         value4: 'A001号'
       }},
     mounted () {
-      this.drawLine()
-      $('#myChart>div>canvas').css('top','-25px');
-      $('#myChartTwo>div>canvas').css('top','-25px');
-      $('#myChartThree>div>canvas').css('top','-25px');
+      this.drawOne();
+      this.drawTwo();
+      this.drawThree()
+      this.$(".content").css("height",this.$(".container").height()+"px")
+      this.$(".boxOne").css("height",(this.$(".content").height()-this.$(".title").height())/3-5+"px");
+      this.$(".boxThree").css("height",this.$(".boxOne").height());
+      this.$(".boxTwo").css("height",this.$(".boxOne").height()-10+"px");
     },
     methods: {
-      drawLine() {
-        //第一个折线图
+      //取号量
+      drawOne() {
         let myChart = this.$echarts.init(document.getElementById('myChart'))
         myChart.setOption({
           grid: {
             left: '3%',
             right: '5%',  //距离右侧边距
-            bottom: '9%',
+            bottom: '5%',
+            top:'1%',
             show: false,
-            containLabel: true,
-
+            containLabel: true
           },
           xAxis: {
             type: "category",
@@ -120,7 +123,7 @@
             },
             axisLabel:{
               fontSize:'9',
-              interval:0,
+              interval:0
             }
           },
           yAxis: {
@@ -135,7 +138,7 @@
             },
             axisLabel: {
               formatter: function () {
-                return "";
+                return ""
               }
             }
           },
@@ -147,7 +150,7 @@
               type: "line",
               label: {
                 show: true,
-                color: 'rgb(4,5,16)',
+                color: 'rgb(4,5,16)'
               },
               itemStyle: {
                 normal:
@@ -167,22 +170,23 @@
               },
               //控制数据线条颜色
               lineStyle: {
-                color: 'rgb(210,0,255)',
+                color: 'rgb(210,0,255)'
               }
             }
           ]
         });
-        //第二个折线图
+      },
+      //等待人数
+      drawTwo(){
         let myChartTwo = this.$echarts.init(document.getElementById('myChartTwo'))
         myChartTwo.setOption({
           grid: {
-            // top:'1%',
             left: '3%',
             right: '5%',  //距离右侧边距
-            bottom: '8%',
+            bottom: '5%',
+            top:'1%',
             show: false,
-            containLabel: true,
-
+            containLabel: true
           },
           xAxis: {
             type: "category",
@@ -207,7 +211,7 @@
             },
             axisLabel:{
               fontSize:'9',
-              interval:0,
+              interval:0
             }
           },
           yAxis: {
@@ -222,7 +226,7 @@
             },
             axisLabel: {
               formatter: function () {
-                return "";
+                return ""
               }
 
             }
@@ -235,7 +239,7 @@
               type: "line",
               label: {
                 show: true,
-                color: 'rgb(4,5,16)',
+                color: 'rgb(4,5,16)'
               },
               itemStyle: {
                 normal:
@@ -255,22 +259,23 @@
               },
               //控制数据线条颜色
               lineStyle: {
-                color: 'rgb(30,132,231)',
+                color: 'rgb(30,132,231)'
               }
             }
           ]
         });
-        //第三个折线图
+      },
+      //平均等待时间
+      drawThree(){
         let myChartThree = this.$echarts.init(document.getElementById('myChartThree'))
         myChartThree.setOption({
           grid: {
-            // top:'1%',
             left: '3%',
             right: '5%',  //距离右侧边距
-            bottom: '8%',
+            bottom: '5%',
+            top:'1%',
             show: false,
             containLabel: true,
-
           },
           xAxis: {
             type: "category",
@@ -295,7 +300,7 @@
             },
             axisLabel:{
               fontSize:'9',
-              interval:0,
+              interval:0
             }
           },
           yAxis: {
@@ -310,7 +315,7 @@
             },
             axisLabel: {
               formatter: function () {
-                return "";
+                return ""
               }
             }
           },
@@ -322,7 +327,7 @@
               type: "line",
               label: {
                 show: true,
-                color: 'rgb(4,5,16)',
+                color: 'rgb(4,5,16)'
               },
               itemStyle: {
                 normal:
@@ -342,12 +347,12 @@
               },
               //控制数据线条颜色
               lineStyle: {
-                color: 'rgb(239,194,3)',
+                color: 'rgb(239,194,3)'
               }
             }
           ]
         });
-      },
+      }
     }
   };
 </script>
@@ -356,6 +361,7 @@
     width: 100%;
     overflow: hidden;
     .content {
+      overflow: hidden;
       width: 100%;
       .title{
         width: 100%;
@@ -386,7 +392,6 @@
         margin-left: 2%;
         margin-top: 10px;
         border-radius: 20px;
-        padding-bottom: 25px;
         .head{
           padding-top: 30px;
           width: 100%;
@@ -422,11 +427,10 @@
         }
         #myChart{
           width: 100%;
-          height: 350px;
+          height: 300px;
         }
       }
       .boxTwo{
-        padding-bottom: 5px;
         width: 96%;
         background-color: #ffffff;
         margin-left: 2%;
@@ -451,11 +455,10 @@
         }
         #myChartTwo{
           width: 100%;
-          height: 350px;
+          height: 300px;
         }
       }
       .boxThree{
-        padding-bottom: 28px;
         width: 96%;
         background-color: #ffffff;
         margin-left: 2%;
@@ -496,7 +499,7 @@
         }
         #myChartThree{
           width: 100%;
-          height: 350px;
+          height: 300px;
         }
       }
     }

@@ -96,6 +96,10 @@
     width: 85% !important;
     height: 36px !important;
   }
+
+  .swiper-pagination-bullet{
+    border-radius: 5px !important;
+  }
   #app {
     font-family:PingFangSC-Regular;
     -webkit-font-smoothing: antialiased;

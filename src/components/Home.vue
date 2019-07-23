@@ -3,40 +3,40 @@
     <div class="content">
       <img src="../assets/bgt.png">
       <div class="box">
-        <div>
-          <img src="../assets/rltj.png" @click="$router.push('rltj')">
+        <div @click="$router.push('rltj')">
+          <img src="../assets/rltj.png">
           <p>人流统计</p>
         </div>
-        <div>
-          <img src="../assets/bjtj.png" @click="$router.push('bjtj')">
+        <div @click="$router.push('bjtj')">
+          <img src="../assets/bjtj.png">
           <p>办件统计</p>
         </div>
-        <div>
-          <img src="../assets/bjdt.png" @click="$router.push('bjdt')">
+        <div @click="$router.push('bjdt')">
+          <img src="../assets/bjdt.png">
           <p>办件动态</p>
         </div>
-        <div>
-          <img src="../assets/pdqk.png" @click="$router.push('pdqk')">
+        <div @click="$router.push('pdqk')">
+          <img src="../assets/pdqk.png">
           <p>排队情况</p>
         </div>
-        <div>
-          <img src="../assets/zhpm.png" @click="$router.push('zhpm')">
+        <div @click="$router.push('win')">
+          <img src="../assets/zhpm.png">
           <p>综合排名</p>
         </div>
-        <div>
-          <img src="../assets/pjtj.png" @click="$router.push('pjtj')">
+        <div @click="$router.push('pjtj')">
+          <img src="../assets/pjtj.png">
           <p>评价统计</p>
         </div>
-        <div>
-          <img src="../assets/lctj.png" @click="$router.push('lctj')">
+        <div @click="$router.push('lctj')">
+          <img src="../assets/lctj.png">
           <p>楼层统计</p>
         </div>
-        <div>
-          <img src="../assets/lcsyt.png" @click="$router.push('lcsy')">
+        <div @click="$router.push('lcsy')">
+          <img src="../assets/lcsyt.png">
           <p>楼层示意图</p>
         </div>
-        <div>
-          <img src="../assets/fbtj.png" @click="$router.push('fbtj')">
+        <div @click="$router.push('fbtj')">
+          <img src="../assets/fbtj.png">
           <p>发布统计</p>
         </div>
       </div>

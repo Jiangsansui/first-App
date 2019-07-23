@@ -8,7 +8,7 @@
         <div class="right">
           <ul><li>日</li><li>月</li><li>年</li></ul>
         </div>
-        <div id="myChart" :style="{width: '100%',height: '330px'}"></div></div>
+        <div id="myChart" :style="{width: '100%',height: '350px'}"></div></div>
       <div class="boxTwo">
         <div class="head">
           <img src="../assets/down.png">
@@ -41,11 +41,11 @@
 </template>
 <script>
   import $ from 'jquery'
-
   export default {
     name: "lctj",
     data () {
       return {
+        centernum:435
       }
     },
     mounted(){
@@ -53,6 +53,11 @@
       $('#lctjc1>.el-progress__text').css('color','#d200ff');
       $('#lctjc2>.el-progress__text').css('color','#f1c101');
       $('#lctjc3>.el-progress__text').css('color','#1e84e7');
+      this.$(".content").css("height",this.$(".container").height()+"px")
+      console.log( this.$(".content").height(),'content')
+      console.log( this.$(".boxOne").height(),'boxOne')
+      this.$(".boxTwo").css("height",this.$(".content").height()-this.$(".boxOne").height()-25+"px")
+      console.log( this.$(".boxTwo").height(),'boxTwo')
     },
     methods: {
       drawLine() {
@@ -64,7 +69,7 @@
             left:'center',
             top:'center',
             style:{
-              text:'1024',
+              text:this.centernum,
               textAlign:'center',
               fontWeight:'bolder',
               fill:'#efc203',
@@ -87,7 +92,6 @@
           ],
           series: [
             {
-              // name:'访问来源',
               type:'pie',
               radius: ['50%', '80%'],
               avoidLabelOverlap: false,
@@ -111,12 +115,16 @@
                 }
               },
               data:[
-                {value:435},
-                {value:390},
-                {value:234},
+                {value:'435'},
+                {value:'390'},
+                {value:'234'},
               ]
             }
           ]
+        })
+        myChart.on("click", (params) => {
+          this.centernum = params.data.value;
+          this.drawLine();
         })
       },
     }
@@ -127,10 +135,10 @@
     overflow: hidden;
     width: 100%;
     .content{
+      overflow: hidden;
       width: 100%;
       .boxOne{
-        padding-bottom: 100px;
-        margin-top: 10px;
+        margin-top: 15px;
         width: 96%;
         background-color: #ffffff;
         border-radius: 20px;
@@ -139,7 +147,7 @@
           width: 100%;
           padding-top: 30px;
           ul{
-            margin-left: -10%;
+            padding-inline-start: 0;
             width: 60%;
             display: flex;
             flex-direction: row;
@@ -179,10 +187,9 @@
       .boxTwo{
         width: 96%;
         margin-left: 2%;
-        margin-top: 10px;
+        margin-top: 15px;
         background-color: #ffffff;
         border-radius: 20px;
-        padding-bottom: 100px;
         .head{
           padding-top: 30px;
           width: 100%;
@@ -255,13 +262,7 @@
               top: 58%;
             }
           }
-
         }
-      }
-    }
-    @media screen and (max-height: 667px) {
-      .boxTwo{
-        padding-bottom: 10px !important;
       }
     }
   }

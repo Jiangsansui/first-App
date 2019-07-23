@@ -9,13 +9,16 @@ import echarts from 'echarts'
 import'lib-flexible'
 import axios from 'axios'
 import $ from 'jquery'
+import Swiper from 'swiper'
 
+
+import 'swiper/dist/css/swiper.css';
 Vue.use(ElementUI);
-Vue.prototype.$axios = axios
+Vue.prototype.$axios =axios
+Vue.prototype.Swiper =Swiper
 Vue.prototype.$ = $
 Vue.prototype.$echarts = echarts
 axios.defaults.baseURL="http://10.10.2.11:8037"
-
 
 Vue.config.productionTip = false
 

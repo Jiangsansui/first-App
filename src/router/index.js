@@ -6,7 +6,8 @@ import ssdars from '@/components/ssdars'
 import bjtj from '@/components/bjtj'
 import bjdt from '@/components/bjdt'
 import pdqk from '@/components/pdqk'
-import zhpm from '@/components/zhpm'
+import win from '@/components/win'
+
 import handleMost from '@/components/handleMost'
 import consultationMost from '@/components/consultationMost'
 import acceptanceMost from '@/components/acceptanceMost'
@@ -18,18 +19,17 @@ import cqjy from '@/components/cqjy'
 import fbtj from '@/components/fbtj'
 import lcsy from '@/components/lcsy'
 import lctj from '@/components/lctj'
-import win from '@/components/win'
+
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {path: '/Home', name: 'Home', component: Home},
+    {path: '/', name: 'Home', component: Home},
     {path: '/rltj', name: 'rltj', component: rltj},
     {path: '/bjtj', name: 'bjtj', component: bjtj},
     {path: '/sjlxq', name: 'sjlxq', component: sjlxq},
     {path: '/bjdt', name: 'bjdt', component: bjdt},
     {path: '/pdqk', name: 'pdqk', component: pdqk},
-    {path: '/zhpm', name: 'zhpm', component: zhpm},
     {path: '/handleMost', name: 'handleMost', component: handleMost},
     {path: '/consultationMost', name: 'consultationMost', component: consultationMost},
     {path: '/acceptanceMost', name: 'acceptanceMost', component: acceptanceMost},
@@ -41,6 +41,6 @@ export default new Router({
     {path: '/lcsy', name: 'lcsy', component: lcsy},
     {path: '/lctj', name: 'lctj', component: lctj},
     {path: '/cqjy', name: 'cqjy', component: cqjy},
-    {path: '/', name: 'win', component: win}
+    {path: '/win', name: 'win', component: win},
   ]
 })

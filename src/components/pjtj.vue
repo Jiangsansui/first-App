@@ -12,10 +12,10 @@
             <img v-for="item in list" :src="item.img">
           </div>
           <div class="conText">
-            <ul v-for="item in info">
-              <li class="text">{{item.event}}</li>
-              <li class="num">{{item.num}}</li>
-              <li class="dw">条</li>
+            <ul v-for="(item,index) in info" :key="index" v-if="index < 5">
+              <li class="text" >{{item.event}}</li>
+              <li class="num" :style="aStyle(index)">{{item.num}}</li>
+              <li class="dw" :style="aStyle(index)">条</li>
             </ul>
           </div>
         </div>
@@ -29,21 +29,23 @@
           <span class="text">评价最多的部门</span>
           <span></span>
         </div>
-        <div id="myChart"
-             :style="{
-                 width: '100%',
-                 height: '360px'}"></div>
+        <div id="myChart":style="{width: '100%',height: '350%'}"></div>
       </div>
     </div>
   </div>
 </template>
-
 <script>
   export default {
     name: "pjtj",
     data(){
       return{
-        info:[],
+        info:[
+          {event:'房屋租赁登记备案',num:'123'},
+          {event:'房屋租赁登记备案',num:'123'},
+          {event:'房屋租赁登记备案',num:'123'},
+          {event:'房屋租赁登记备案',num:'123'},
+          {event:'房屋租赁登记备案',num:'123'}
+        ],
         list:[
           {img:require('../assets/logo1.png')},
           {img:require('../assets/logo2.png')},
@@ -55,30 +57,13 @@
     },
     mounted () {
       this.drawLine()
-      this.getInfo()
+      console.log( this.$(".container").height(),'container')
+      this.$(".content").css("height",this.$(".container").height()+"px")
+      console.log( this.$(".content").height(),'content')
+      this.$(".boxTwo").css("height",this.$(".content").height()-this.$(".boxOne").height()-25+"px")
+
     },
     methods: {
-      getInfo(){
-        this.$http
-          .get("/table")
-          .then(
-            function (res) {
-              this.info=res.data
-              // .concat(this.list)
-              let arr=[]
-              this.info.map((item,key)=>{
-                if(key>=5){
-                  arr.push(item)
-                }
-              })
-            }.bind(this)
-          )
-          .catch(
-            function (error) {
-              console.log(error)
-            }.bind(this)
-          )
-      },
       drawLine() {
         let myChart = this.$echarts.init(document.getElementById('myChart'))
         myChart.setOption({
@@ -107,18 +92,15 @@
                     temp = value.substring(start, end) + "\n";
                     str += temp;
                   }
-                  return str;
-                } else {
-                  return value;
-                }
+                  return str;}
+                else {return value;}
               }
             },
           },
           grid: {
-            top:'10%',
+            top:'5%',
             left: '1%',
             right: '4%',
-            // bottom: '1%',
             containLabel: true
           },
           xAxis: {
@@ -177,25 +159,31 @@
                       color:'black'
                     }
                   }
-                },
+                }
               }
             }]
         })
-      }}}
+      },
+      aStyle(index) {
+        if (index == 0) {return { color: '#ea3587'}}
+        else if (index == 1) {return { color: '#efc203'}}
+      }
+    }
+  }
 </script>
 <style lang="scss" scoped>
   .container {
-    overflow: hidden;
+    overflow-y: hidden !important;
     width: 100%;
     .content {
       width: 100%;
       .boxOne {
-        margin-top: 10px;
+        height: 45%;
+        margin-top: 15px;
         width: 96%;
         margin-left: 2%;
         border-radius: 20px;
         background-color: #ffffff;
-        padding-bottom: 50px;
         .head {
           height: 30px;
           padding-top: 30px;
@@ -232,16 +220,17 @@
             width: 86%;
             position: relative;
             ul{
-              margin-top: 35px;
+              height: 50px;
+              margin-top: 30px;
               list-style: none;
-              width: 100%;
               display: flex;
               flex-direction: row;
               li{
-                color: #cb00f7;
+                line-height: 50px;
+                font-size: 16px;
+                color: #1e84e7;
               }
               .text{
-                margin-top: 2px;
                 position: absolute;
                 margin-left: -10%;
                 font-size: 28px;
@@ -255,10 +244,6 @@
                 margin-right: 2%;
                 margin-left: 70%;
               }
-              .dw{
-                margin-top: 8px;
-                font-size: 24px;
-              }
             }
           }
         }
@@ -269,9 +254,10 @@
         letter-spacing: 1px;
         font-size: 28px;
       }
+
     }
     .boxTwo {
-      margin-top: 10px;
+      margin-top: 15px;
       width: 96%;
       margin-left: 2%;
       border-radius: 20px;
@@ -291,11 +277,6 @@
           margin-left: 2%;
           font-size: 30px;
         }
-      }
-    }
-    @media screen and (max-height: 667px) {
-      .boxTwo{
-        height: 670px;
       }
     }
   }

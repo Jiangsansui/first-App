@@ -2,7 +2,7 @@
   <div class="container">
     <div class="search" >
       <span >部门信息</span>
-      <input type="text" placeholder="请输入内容" ></input>
+      <input type="text" placeholder="请输入内容" autofocus="autofocus"></input>
       <img src="../assets/search.png"  >
     </div>
     <div class="content">
@@ -31,10 +31,15 @@
           {name:'产权交易'},
           {name:'产权交易'},
           {name:'产权交易'}
-
         ]
       }
     },
+    //input获取焦点
+    // mounted(){
+    //   this.$nextTick(()=>{
+    //     this.$refs.name.focus()
+    //   })
+    // },
     methods:{
       cqjy(){
         this.$router.push({path: "/cqjy"});
@@ -102,11 +107,8 @@
           float: left;
           margin-left: 8.9%;
           font-size: 0.4rem;
-
         }
       }
     }
   }
-
-
 </style>

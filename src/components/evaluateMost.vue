@@ -54,93 +54,20 @@
         ]
       }
     },
+    mounted(){
+      this.$(".content").css("height",this.$(".container").height()-15+"px")
+      console.log( this.$(".content").height())
+    },
     methods: {
       aStyle(index) {
-        if (index == 0) {
-          return { color: '#ea3587'}
-        } else if (index == 1) {
-          return { color: '#efc203'}
-        }
-      },
+        if (index == 0) {return { color: '#ea3587'}}
+        else if (index == 1) {return { color: '#efc203'}}
+      }
     }
   }
 </script>
 
 <style lang="scss" scoped>
-  .container{
-    overflow: hidden;
-    width: 100%;
-    .content {
-      margin-top: 15px;
-      width: 96%;
-      height: 1300px;
-      margin-left: 2%;
-      border-radius: 20px;
-      background-color: #ffffff;
-      .head {
-        height: 30px;
-        padding-top: 30px;
-        width: 100%;
-        img {
-          margin-top: 13px;
-          float: left;
-          margin-left: 4%;
-          width: 24px;
-          height: 18px;
-        }
-        .text {
-          color:black;
-          float: left;
-          margin-left: 2%;
-          font-size: 30px;
-        }
-      }
-      .main{
-        width: 100%;
-        display: flex;
-        flex-direction:row;
-        .imgLogo{
-          display: flex;
-          flex-direction: column;
-          width: 14%;
-          img{
-            margin-left: 30%;
-            margin-top: 40px;
-            width: 50px;
-          }
-        }
-        .conText{
-          width: 86%;
-          position: relative;
-          ul{
-            margin-top: 43px;
-            list-style: none;
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            li{
-              font-size: 16px;
-              color: #1e84e7;
-            }
-            .text{
-              margin-top: 2px;
-              position: absolute;
-              margin-left: -10%;
-              font-size: 28px;
-              letter-spacing: 0.5px;
-              color: black;
-            }
-            .num{
-              font-size: 36px;
-              font-weight: bolder;
-              letter-spacing: -1px;
-              margin-right: 2%;
-              margin-left: 70%;
-            }
-          }
-        }
-      }
-    }
-  }
+  @import "../style/common.scss";
 </style>
 

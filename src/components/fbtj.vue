@@ -30,7 +30,7 @@
                      -webkit-box-orient: horizontal;">
           </div>
           <div class="text">
-            <span class="num purple">123</span>
+            <span class="num purple">{{xxNum}}</span>
             <span>人</span>
           </div>
         </div>
@@ -48,6 +48,9 @@
     },
     mounted() {
       this.drawLine();
+      this.$(".content").css("height",this.$(".container").height()-15+"px")
+      this.$(".boxOne").css("height",this.$(".content").height()/2-5+"px")
+      this.$(".boxTwo").css("height",this.$(".boxOne").height()+"px")
     },
     methods: {
       drawLine() {
@@ -145,7 +148,7 @@
       }
       .boxPub {
         width: 96%;
-        height: 640px;
+        height: 650px;
         background-color: #ffffff;
         margin-left: 2%;
         margin-top: 15px;

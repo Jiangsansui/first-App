@@ -14,7 +14,7 @@
             <li>人</li>
           </ul>
         </div>
-        <div id="myChart" style="width: 100%;height: 250px"></div>
+        <div id="myChart" style="width: 100%;height: 300px"></div>
         <div class="title" @click="goto($router.push({path: '/ssdars'}))">查看详情></div>
       </div>
       <div class="boxTwo">
@@ -37,7 +37,7 @@
           <span>3</span>
 
         </div>
-        <div id="myChartTwo" style="width: 100%;height: 340px"></div>
+        <div id="myChartTwo" style="width: 100%;height: 300px"></div>
       </div>
     </div>
   </div>
@@ -62,7 +62,11 @@
     },
     mounted () {
       this.drawLine()
-      $('#myChart>div').css('top','-50px');
+       $('#myChart>div').css('top','-50px');
+      // $('#myChartTwo>div').css('top','-20px');
+      this.$(".content").css("height",this.$(".container").height()-15+"px")
+      this.$(".boxTwo").css("height",this.$(".content").height()-this.$(".boxOne").height()-10+"px")
+
     },
     methods: {
       drawLine() {
@@ -93,14 +97,20 @@
             axisLabel:{textStyle:{fontFamily:'Arial'}},
             axisLine: {show: false}
           }],
-          grid: {left: '4%', containLabel: true},
+          grid: {
+            left: '4%',
+            containLabel: true
+          },
           series: [
             {
               type: 'bar',
               // stack: 'chart',
               z: 3,
               label: {
-                normal: {position: 'right', show: true}
+                normal: {
+                  position: 'right',
+                  show: true
+                }
               },
               itemStyle: {
                 normal: {
@@ -160,7 +170,7 @@
         // 绘制第二个图
         myChartTwo.setOption({
           grid: {
-            right: '6%',
+            right: '4%',
             containerLabel: true,
             borderWidth: 0
           },
@@ -178,10 +188,16 @@
               "17：30"
             ],
             // 去除x轴上的刻度线
-            axisTick: {show: false,},
+            axisTick: {
+              show: false
+            },
             //去掉x轴横轴
-            axisLine: {show: false,},
-            axisLabel:{fontSize:'10', interval:0,
+            axisLine: {
+              show: false
+            },
+            axisLabel:{
+              fontSize:'8',
+              interval:0
             // rotate:0 //倾斜角度
             }
           },
@@ -191,7 +207,7 @@
             axisLine: {show: false},
             // 去除y轴上的刻度线
             axisTick: {
-              show: false,
+              show: false
             },
             //设置网格线样式
             splitLine :{
@@ -203,12 +219,13 @@
           },
           series: [
             {
+              smooth: true,
               symbolSize:6,
               data: [50,35,69,50,23,120,80,100,13,34],
               type: "line",
               label: {
                 show: true,
-                color: 'rgb(207,207,202)',
+                color: 'rgb(207,207,202)'
               },
               itemStyle: {
                 normal:
@@ -227,8 +244,12 @@
                   }
               },
               //控制数据线条颜色
-              lineStyle: {color: 'rgb(239,194,2)',},
-              label:{show:false}
+              lineStyle: {
+                color: 'rgb(239,194,2)'
+              },
+              label:{
+                show:false
+              }
             }
           ]
         })

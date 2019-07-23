@@ -11,10 +11,7 @@
         <span>总计:</span>
       </div>
       <div id="myChart"
-           :style="{width: '300px',
-                      paddingBottom:'94px',
-                      marginLeft:'13%',
-                       height: '300px'}">
+           :style="{width: '100%',paddingBottom:'50px',height: '300px'}">
       </div>
       <div class="tip">
         <div>
@@ -56,6 +53,8 @@
     },
     mounted () {
       this.drawLine()
+      console.log(this.$(".container").height())
+      this.$(".content").css("height",this.$(".container").height()-15+"px")
     },
     methods: {
       aStyle(index){
@@ -75,7 +74,6 @@
 // 饼状图
           legend: {
             orient: 'vertical',
-            left: 'left',
             data: ['直接访问','邮件营销','联盟广告']
           },
           series : [
@@ -116,7 +114,6 @@
     overflow: hidden;
     width: 100%;
     .content{
-      height: 1290px;
       width: 96%;
       margin-left: 2%;
       background-color: #ffffff;
@@ -152,9 +149,9 @@
         width: 100%;
         display: flex;
         flex-direction: row;
-        padding-bottom:80px ;
+        padding-bottom:50px ;
         div{
-          width: 33.3%;
+          width: 33%;
         }
         .fk{
           margin-left: 1%;
@@ -197,36 +194,10 @@
           .dw{
             color: #b8b8b8;
             margin-top: 9px;
-            margin-left: 1%;
+            margin-left: 1% ;
             font-size: 20px;
+
           }
-        }
-      }
-    }
-    @media screen and (max-height: 667px) {
-      .footer{
-        .fk{
-          margin-left: -3.9% !important;
-        }
-      }
-    }
-    @media screen and (min-height: 812px) {
-      .footer{
-        .fk{
-          margin-left: -3.9% !important;
-        }
-      }
-    }
-    @media screen and (min-height: 1024px) {
-      .footer{
-        .fk{
-          margin-left: 4% !important;
-        }
-        .name{
-          margin-left: 9% !important;
-        }
-        .num{
-          margin-left: 77% !important;
         }
       }
     }

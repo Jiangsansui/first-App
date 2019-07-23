@@ -46,12 +46,17 @@
           {name:'13 综合行政执法'},
           {name:'14 其他事务综合'},
           {name:'15 瓯江口集聚区'},
-          {name:'16 特色小镇'},
-
+          {name:'16 特色小镇'}
         ]
       }
     },
+    mounted() {
+      console.log(this.$(".container").height())
+      this.$(".content").css("height",this.$(".container").height()-15+"px")
+      this.$(".main").css("height",this.$(".content").height()+"px")
+      console.log(this.$(".content").height(),'content')
 
+    }
   }
 </script>
 
@@ -64,19 +69,21 @@
       .main{
         width: 96%;
         background-color: #ffffff;
-        margin-top: 10px;
+        margin-top: 15px;
         margin-left: 2%;
         border-radius: 20px;
-        padding-bottom: 150px;
         .left{
           width: 100%;
           padding-top: 10px;
           ul{
+            padding-inline-start:0;
             width: 100%;
             list-style: none;
             display: flex;
             flex-direction: row;
             li{
+              margin-left: 4% !important;
+              line-height: 40px;
               font-size: 24px;
               color: #000;
               margin-top: 15px;
@@ -136,76 +143,21 @@
         }
       }
     }
-    @media screen and (max-height: 570px) {
-      .main{
-        padding-bottom:100px !important;
-        .bgImg{
-          height: 575px !important;
-        }
+    @media screen and (min-height: 1024px) {
+      .text{
+        margin-top: 150px;
       }
       .express{
-        ul{
-          margin-left: -6% !important;
-          li{
-            padding-top: 16px !important;
-            letter-spacing:0px !important;
-          }
-        }
-      }
-    }
-    @media screen and (min-height: 736px) {
-
-      .main{
-        padding-bottom:234px !important;
-        .bgImg{
-          height: 540px !important;
-        }
-      }
-    }
-    @media screen and (min-height: 812px) {
-      .main{
-        padding-bottom:440px !important;
-        .bgImg{
-          height: 600px !important;
-        }
-      }
-    }
-    @media screen and (min-height: 1024px) {
-      .main{
-        padding-bottom:100px !important;
-        .bgImg{
-          height: 780px !important;
-        }
-        .express{
-          ul{
-            margin-left: 6% !important;
-          }
-        }
+        margin-left: 6%;
       }
     }
     @media screen and (min-height: 1366px) {
-      .main{
-        margin-top: 20px !important;
-        .left{
-          margin-left: 6% !important;
-        }
-        padding-bottom:176px !important;
-        .bgImg{
-          height: 1080px !important;
-        }
-        .text{
-          font-size: 42px !important;
-        }
-        .express{
-          ul{
-            margin-left: 6% !important;
-            li{
-              font-size: 30px!important;
-            }
-          }
-        }
+      .text{
+        margin-top: 450px;
+      }
+      .express{
+        margin-left: 8%;
       }
     }
   }
-
 </style>
